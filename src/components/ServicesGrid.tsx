@@ -14,14 +14,19 @@ export function ServicesGrid() {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
     const ctx = gsap.context(() => {
-      gsap.from("[data-service-card]", {
-        y: 24,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.08,
-        ease: "power2.out",
-        scrollTrigger: { trigger: ref.current, start: "top 80%" },
-      });
+      gsap.fromTo(
+        "[data-service-card]",
+        { y: 24, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: "power2.out",
+          immediateRender: false,
+          scrollTrigger: { trigger: ref.current, start: "top 90%", once: true },
+        },
+      );
     }, ref);
     return () => ctx.revert();
   }, []);

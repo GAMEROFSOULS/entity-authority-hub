@@ -5,6 +5,7 @@ import { ProblemSection } from "@/components/ProblemSection";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { HowItWorks } from "@/components/HowItWorks";
 import { StatsSection } from "@/components/StatsSection";
+import { CaseStudies } from "@/components/CaseStudies";
 import { EntityExplainer } from "@/components/EntityExplainer";
 import { CtaSection } from "@/components/CtaSection";
 import { Footer } from "@/components/Footer";

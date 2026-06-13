@@ -1,29 +1,48 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navigation } from "@/components/Navigation";
+import { HeroSection } from "@/components/HeroSection";
+import { ProblemSection } from "@/components/ProblemSection";
+import { ServicesGrid } from "@/components/ServicesGrid";
+import { HowItWorks } from "@/components/HowItWorks";
+import { StatsSection } from "@/components/StatsSection";
+import { EntityExplainer } from "@/components/EntityExplainer";
+import { CtaSection } from "@/components/CtaSection";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "EntityBuild — Make AI Systems Recommend Your Brand" },
+      {
+        name: "description",
+        content:
+          "EntityBuild engineers your digital authority so ChatGPT, Gemini, Perplexity, and Google AI cite and surface your brand — not your competitors.",
+      },
+      { property: "og:title", content: "EntityBuild — Make AI Systems Recommend Your Brand" },
+      {
+        property: "og:description",
+        content:
+          "Engineering the brands AI recommends. Entity engineering, GEO, AEO, schema, and citation infrastructure.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation />
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <ServicesGrid />
+        <HowItWorks />
+        <StatsSection />
+        <EntityExplainer />
+        <CtaSection />
+      </main>
+      <Footer />
     </div>
   );
 }

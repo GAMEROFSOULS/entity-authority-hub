@@ -29,6 +29,18 @@ export function StatsSection() {
           scrollTrigger: { trigger: ref.current, start: "top 90%", once: true },
         },
       );
+      gsap.fromTo(
+        "[data-testimonial]",
+        { y: 24, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          immediateRender: false,
+          scrollTrigger: { trigger: "[data-testimonial]", start: "top 88%", once: true },
+        },
+      );
     }, ref);
     return () => ctx.revert();
   }, []);

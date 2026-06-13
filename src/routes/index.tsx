@@ -40,6 +40,7 @@ function Index() {
         <ServicesGrid />
         <HowItWorks />
         <StatsSection />
+        <CaseStudies />
         <EntityExplainer />
         <CtaSection />
       </main>

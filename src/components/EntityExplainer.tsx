@@ -19,22 +19,32 @@ export function EntityExplainer() {
     if (!ref.current) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const ctx = gsap.context(() => {
-      gsap.from("[data-stage]", {
-        y: 16,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: { trigger: ref.current, start: "top 75%" },
-      });
-      gsap.from("[data-connector]", {
-        scaleX: 0,
-        transformOrigin: "left center",
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: { trigger: ref.current, start: "top 75%" },
-      });
+      gsap.fromTo(
+        "[data-stage]",
+        { y: 16, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: "power2.out",
+          immediateRender: false,
+          scrollTrigger: { trigger: ref.current, start: "top 90%", once: true },
+        },
+      );
+      gsap.fromTo(
+        "[data-connector]",
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          transformOrigin: "left center",
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out",
+          immediateRender: false,
+          scrollTrigger: { trigger: ref.current, start: "top 90%", once: true },
+        },
+      );
     }, ref);
     return () => ctx.revert();
   }, []);

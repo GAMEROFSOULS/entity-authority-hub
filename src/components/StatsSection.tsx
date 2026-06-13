@@ -49,16 +49,40 @@ export function StatsSection() {
           ))}
         </div>
 
-        <blockquote className="mt-16 border-l-2 border-brand-indigo pl-6 max-w-3xl">
-          <p className="font-display text-xl lg:text-2xl text-foreground leading-snug">
-            “Within a quarter of working with EntityBuild, our brand started appearing in ChatGPT
-            answers for category-defining queries. It changed the inbound game entirely.”
-          </p>
-          <footer className="mt-4 text-sm text-muted-foreground">
-            {/* TODO: replace with real testimonial */}
-            — Head of Growth, B2B SaaS (in-progress engagement)
-          </footer>
-        </blockquote>
+        <figure
+          data-testimonial
+          className="relative mt-16 max-w-4xl rounded-2xl border border-brand-indigo/30 bg-background/60 p-8 sm:p-10 overflow-hidden"
+        >
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-60"
+            style={{
+              background:
+                "radial-gradient(60% 80% at 0% 0%, rgba(91,110,245,0.18), transparent 70%), radial-gradient(50% 80% at 100% 100%, rgba(167,139,250,0.15), transparent 70%)",
+            }}
+          />
+          <div className="relative">
+            <span
+              aria-hidden
+              className="font-display font-extrabold text-7xl leading-none text-brand-indigo/40"
+            >
+              “
+            </span>
+            <blockquote className="-mt-4">
+              <p className="font-display text-xl lg:text-2xl text-foreground leading-snug">
+                Within a quarter of working with EntityBuild, our brand started appearing in ChatGPT
+                answers for category-defining queries. It changed the inbound game entirely.
+              </p>
+              <figcaption className="mt-6 flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-gradient-to-br from-brand-indigo to-brand-violet" />
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Head of Growth</p>
+                  <p className="text-xs text-muted-foreground">B2B SaaS · in-progress engagement</p>
+                </div>
+              </figcaption>
+            </blockquote>
+          </div>
+        </figure>
       </div>
     </section>
   );

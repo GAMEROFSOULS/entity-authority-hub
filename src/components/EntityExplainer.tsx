@@ -50,7 +50,7 @@ export function EntityExplainer() {
   }, []);
 
   return (
-    <section id="cases" className="px-6 py-24" ref={ref}>
+    <section id="explainer" className="px-6 py-24" ref={ref}>
       <div className="mx-auto max-w-7xl">
         <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-foreground max-w-3xl">
           How AI Systems Decide Who to Recommend

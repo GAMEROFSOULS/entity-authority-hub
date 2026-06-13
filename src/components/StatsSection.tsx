@@ -16,14 +16,19 @@ export function StatsSection() {
     if (!ref.current) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const ctx = gsap.context(() => {
-      gsap.from("[data-stat]", {
-        y: 20,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.12,
-        ease: "power2.out",
-        scrollTrigger: { trigger: ref.current, start: "top 75%" },
-      });
+      gsap.fromTo(
+        "[data-stat]",
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.12,
+          ease: "power2.out",
+          immediateRender: false,
+          scrollTrigger: { trigger: ref.current, start: "top 90%", once: true },
+        },
+      );
     }, ref);
     return () => ctx.revert();
   }, []);
